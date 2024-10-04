@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><span>D</span>ecor</a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#"><span>&#9673</span>Home</a>
+            <a href="#"><span>&#9673</span>About</a>
+            <a href="#"><span>&#9673</span>Portfolio</a>
+            <a href="#"><span>&#9673</span>Services</a>
+            <a href="#"><span>&#9673</span>Contact</a>
+        </nav>
+        <script>
+           document.addEventListener('DOMContentLoaded', function() {
+            // Search icon click event
+            var searchIcon = document.getElementById('search-icon');
+            var nav = document.querySelector('.nav');
+            var searchInput = document.querySelector('.search-input');
+            
+            if (searchIcon) {
+                searchIcon.addEventListener('click', function() {
+                nav.classList.toggle('search');
+                nav.classList.toggle('no-search');
+                searchInput.classList.toggle('search-active');
+                });
+            }
+
+            // Menu toggle click event
+            var menuToggle = document.querySelector('.menu-toggle');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('mobile-nav');
+                this.classList.toggle('is-active');
+                });
+            }
+            });
+
+
+        </script>
+    </header>
+    <section class="hero-section">
+        <div class="slider-container" id="slider-container">
+            <div class="slider">
+                <div class="slide fade slide1">
+                    <div class="inner-div">
+                        <h2>OUR EXPERTISE FOR <br><span>INTERIOR DESIGN</span></h2>
+                        <a href="#">GAT CALL</a>
+                    </div>
+                </div>
+                <div class="slide fade slide2">
+                    <div class="inner-div">
+
+                    </div>
+                </div>
+                <div class="slide fade slide3">
+                    <div class="inner-div">
+
+                    </div>
+                </div>
+            </div>
+            <div class="navigation">
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+        </div>
+    
+    </section>
+    <script>
+        let slideIndex = 0;
+        let slides = document.getElementsByClassName("slide");
+        let dots = document.getElementsByClassName("dot");
+        let sliderContainer = document.getElementById('slider-container');
+        let slideInterval;
+
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active-dot");
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+
+            slides[slideIndex - 1].classList.add("active");
+            dots[slideIndex - 1].classList.add("active-dot");
+            
+            slideInterval = setTimeout(showSlides, 4000); // Change slide every 4 seconds
+        }
+
+        function changeSlide(n) {
+            clearTimeout(slideInterval);
+            slideIndex += n - 1;
+            showSlides();
+        }
+
+        function currentSlide(n) {
+            clearTimeout(slideInterval);
+            slideIndex = n - 1;
+            showSlides();
+        }
+
+        sliderContainer.addEventListener('mouseenter', () => clearTimeout(slideInterval));
+        sliderContainer.addEventListener('mouseleave', () => showSlides());
+
+        showSlides();
+
+
+    </script>
+</body>
+</html>

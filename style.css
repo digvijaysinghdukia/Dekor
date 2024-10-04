@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap&family=Dosis:wght@200..800&display=swap&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap&family=Dosis:wght@200..800&display=swap');
 
 
 :root{
@@ -239,12 +239,14 @@ body{
     background-color: rgba(0, 0, 0, 0.76);
     display: grid;
     place-items: center;
-    grid-auto-flow: row;
-    row-gap: 2rem;
 }
 .inner-div h2{
     color: var(--white);
-
+    font-size: smaller;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 

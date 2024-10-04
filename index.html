@@ -6,9 +6,7 @@
     <title>Decor</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    <style>
-        
-    </style>
+    
 </head>
 <body>
     <header class="header">
@@ -57,18 +55,20 @@
             <div class="slider">
                 <div class="slide fade slide1">
                     <div class="inner-div">
-                        <h2>OUR EXPERTISE FOR <br><span>INTERIOR DESIGN</span></h2>
+                        <h2>Our Expertise for Our <br><span>Interior Design</span></h2>
                         <a href="#">GAT CALL</a>
                     </div>
                 </div>
                 <div class="slide fade slide2">
                     <div class="inner-div">
-
+                        <h2>Featured Project<br><span>Green Design</span></h2>
+                        <a href="#">GAT CALL</a>
                     </div>
                 </div>
                 <div class="slide fade slide3">
                     <div class="inner-div">
-
+                        <h2>Interior Remodeling To Makes <br><span>Your Life Easier </span></h2>
+                        <a href="#">GAT CALL</a>
                     </div>
                 </div>
             </div>
@@ -82,50 +82,70 @@
                 <span class="dot" onclick="currentSlide(3)"></span> 
             </div>
         </div>
+        <script>
+            let slideIndex = 0;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            let sliderContainer = document.getElementById('slider-container');
+            let slideInterval;
     
+            function showSlides() {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove("active");
+                }
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].classList.remove("active-dot");
+                }
+    
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1; }
+    
+                slides[slideIndex - 1].classList.add("active");
+                dots[slideIndex - 1].classList.add("active-dot");
+                
+                slideInterval = setTimeout(showSlides, 6000); // Change slide every 4 seconds
+            }
+    
+            function changeSlide(n) {
+                clearTimeout(slideInterval);
+                slideIndex += n - 1;
+                showSlides();
+            }
+    
+            function currentSlide(n) {
+                clearTimeout(slideInterval);
+                slideIndex = n - 1;
+                showSlides();
+            }
+    
+            sliderContainer.addEventListener('mouseenter', () => clearTimeout(slideInterval));
+            sliderContainer.addEventListener('mouseleave', () => showSlides());
+    
+            showSlides();
+    
+    
+        </script>
     </section>
-    <script>
-        let slideIndex = 0;
-        let slides = document.getElementsByClassName("slide");
-        let dots = document.getElementsByClassName("dot");
-        let sliderContainer = document.getElementById('slider-container');
-        let slideInterval;
-
-        function showSlides() {
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-            }
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].classList.remove("active-dot");
-            }
-
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1; }
-
-            slides[slideIndex - 1].classList.add("active");
-            dots[slideIndex - 1].classList.add("active-dot");
-            
-            slideInterval = setTimeout(showSlides, 4000); // Change slide every 4 seconds
-        }
-
-        function changeSlide(n) {
-            clearTimeout(slideInterval);
-            slideIndex += n - 1;
-            showSlides();
-        }
-
-        function currentSlide(n) {
-            clearTimeout(slideInterval);
-            slideIndex = n - 1;
-            showSlides();
-        }
-
-        sliderContainer.addEventListener('mouseenter', () => clearTimeout(slideInterval));
-        sliderContainer.addEventListener('mouseleave', () => showSlides());
-
-        showSlides();
-
-
-    </script>
+    
+    <section class="we-do">
+        <div class="we-do-centner">
+            <div class="heading">
+                <h2>What We Do</h2>
+                <div class="line">
+                    <div></div>
+                    <span>&#9673</span>
+                </div>
+            </div>
+            <div class="we-cards">
+                <div class="card">
+                    <div class="card-img"></div>
+                    <div class="card-text-area">
+                        <h3><span>heading</span>heading</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum dicta quibusdam cum cupiditate fuga unde, quaerat voluptatibus voluptatem vel aut natus, ad nemo odio, dolore adipisci deleniti possimus dolorem?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

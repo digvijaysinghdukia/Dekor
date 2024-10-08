@@ -5,51 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decor</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    
     
 </head>
 <body>
     <header class="header">
         <a href="#" class="logo"><span>D</span>ecor</a>
-
-        <i class='bx bx-menu' id="menu-icon"></i>
-
-        <nav class="navbar">
-            <a href="#"><span>&#9673</span>Home</a>
-            <a href="#"><span>&#9673</span>About</a>
-            <a href="#"><span>&#9673</span>Portfolio</a>
-            <a href="#"><span>&#9673</span>Services</a>
-            <a href="#"><span>&#9673</span>Contact</a>
-        </nav>
-        <script>
-           document.addEventListener('DOMContentLoaded', function() {
-            // Search icon click event
-            var searchIcon = document.getElementById('search-icon');
-            var nav = document.querySelector('.nav');
-            var searchInput = document.querySelector('.search-input');
-            
-            if (searchIcon) {
-                searchIcon.addEventListener('click', function() {
-                nav.classList.toggle('search');
-                nav.classList.toggle('no-search');
-                searchInput.classList.toggle('search-active');
-                });
-            }
-
-            // Menu toggle click event
-            var menuToggle = document.querySelector('.menu-toggle');
-            
-            if (menuToggle) {
-                menuToggle.addEventListener('click', function() {
-                nav.classList.toggle('mobile-nav');
-                this.classList.toggle('is-active');
-                });
-            }
-            });
-
-
-        </script>
+    
+        <i class="menu" id="menu-icon">&#9776;</i> <!-- Corrected menu icon -->
+    
+        
+    
+        <div class="nav-bg">
+            <nav class="navbar">
+                <a href="#"><span>&#9673;</span>Home</a>
+                <a href="#"><span>&#9673;</span>About</a>
+                <a href="#"><span>&#9673;</span>Portfolio</a>
+                <a href="#"><span>&#9673;</span>Services</a>
+                <a href="#"><span>&#9673;</span>Contact</a>
+            </nav>
+        </div>
     </header>
+    <script>
+        // JavaScript to toggle the navbar and nav-bg visibility
+        document.getElementById('menu-icon').addEventListener('click', function() {
+            const navbar = document.querySelector('.navbar');
+            const navBg = document.querySelector('.nav-bg');
+
+            navbar.classList.toggle('active'); // Toggle navbar visibility
+            navBg.classList.toggle('active');  // Toggle nav-bg visibility
+        });
+
+    </script>    
     <section class="hero-section">
         <div class="slider-container" id="slider-container">
             <div class="slider">
@@ -138,14 +125,181 @@
             </div>
             <div class="we-cards">
                 <div class="card">
-                    <div class="card-img"></div>
                     <div class="card-text-area">
-                        <h3><span>heading</span>heading</h3>
+                        <h3><span>Residential </span> Design</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum dicta quibusdam cum cupiditate fuga unde, quaerat voluptatibus voluptatem vel aut natus, ad nemo odio, dolore adipisci deleniti possimus dolorem?</p>
                     </div>
+                    <div class="card-img card1-img">
+                        <div></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-text-area">
+                        <h3><span>Office </span> Design</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum dicta quibusdam cum cupiditate fuga unde, quaerat voluptatibus voluptatem vel aut natus, ad nemo odio, dolore adipisci deleniti possimus dolorem?</p>
+                    </div>
+                    <div class="card-img card2-img"><div></div></div>
+                </div>
+                <div class="card">
+                    <div class="card-text-area">
+                        <h3><span>Commercial </span> Design</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum dicta quibusdam cum cupiditate fuga unde, quaerat voluptatibus voluptatem vel aut natus, ad nemo odio, dolore adipisci deleniti possimus dolorem?</p>
+                    </div>
+                    <div class="card-img card3-img"><div></div></div>
                 </div>
             </div>
         </div>
     </section>
+    <section class="our-process">
+        <div class="process-con">
+            <div class="heading">
+                <h2 style="font-size: xxx-large;">Our Process</h2>
+            </div>
+            <div class="main-area">
+                <div class="main-card">
+                    <h3>Meet & Agree</h3>
+                </div>
+                <div class="main-card">
+                    <h3>Idea & Concept</h3>
+                </div>
+                <div class="main-card">
+                    <h3>Design & Create</h3>
+                </div>
+                <div class="main-card">
+                    <h3>Build & Install</h3>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                function changeBackgroundColorsSequentially() {
+                    const cards = document.querySelectorAll('.main-card');
+                    const color = 'white'; // Color to be applied
+                    let currentIndex = 0;
+    
+                    setInterval(() => {
+                        // Reset all cards to original background
+                        cards.forEach(card => {
+                            card.style.backgroundColor = 'var(--secondary-color)'; // Reset to secondary color
+                        });
+    
+                        // Apply the new color to the current card
+                        cards[currentIndex].style.backgroundColor = color;
+    
+                        // Move to the next card, loop back to the first card if at the end
+                        currentIndex = (currentIndex + 1) % cards.length;
+                    }, 3000); // 3 seconds interval
+                }
+    
+                // Call the function to start the sequential background color change
+                changeBackgroundColorsSequentially();
+            });
+        </script>
+    </section>
+    
+    <section class="gallary-section">
+        <div class="gallery-image">
+            <div class="img-box">
+              <img src="./media/Modern-Interior-Design-Style.webp" alt="" />
+              <div class="transparent-box">
+                <div class="caption">
+                  <h3>Modern</h3>
+                  <p class="opacity-low">Interior Design</p>
+                </div>
+              </div> 
+            </div>
+            <div class="img-box">
+              <img src="./media/Mid-Century-Interior-Design-Style.webp" alt="" />
+              <div class="transparent-box">
+                <div class="caption">
+                  <h3>Mid-Century</h3>
+                  <p class="opacity-low">Interior Design</p>
+                </div>
+              </div>
+            </div>
+            <div class="img-box">
+              <img src="./media/Minimalist-Interior-Design-Style.webp" alt="" />
+              <div class="transparent-box">
+                <div class="caption">
+                  <h3>Minimalist</h3>
+                  <p class="opacity-low">Interior Design</p>
+                </div>
+              </div>
+            </div>
+            <div class="img-box">
+              <img src="./media/Shabby-Chic-Interior-Design-Style.webp" alt="" />
+              <div class="transparent-box">
+                <div class="caption">
+                  <h3>Shabby Chic</h3>
+                  <p class="opacity-low">Interior Design</p>
+                </div>
+              </div> 
+            </div>
+            <div class="img-box">
+              <img src="./media/Eclectic-Interior-Design-Style.webp" alt="" />
+              <div class="transparent-box">
+                <div class="caption">
+                  <h3>Eclectic</h3>
+                  <p class="opacity-low">Interior Design</p>
+                </div>
+              </div> 
+            </div>
+            <div class="img-box">
+              <img src="./media/Industrial-Interior-Design-Style-1024x576.webp" alt="" />
+              <div class="transparent-box">
+                <div class="caption">
+                  <h3>Industrial</h3>
+                  <p class="opacity-low">Interior Design</p>
+                </div>
+              </div> 
+            </div>
+          </div>
+          <div class="bar">
+            <a href="#">View All Projects</a>
+          </div>
+    </section>
+    <section class="q-text">
+        <div class="text">
+            <div>
+                <h3>Modern and great design!</h3>
+                <p>
+                    "Just wow! I'm always impressed with the services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="logo-area">
+            <a href="#" class="logo"><span>D</span>ecor</a>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error minus, maxime dolor culpa laudantium laborum pariatur quae ex vitae repudiandae corporis id nobis explicabo aut officia aperiam facere repellendus dignissimos.</p>
+        </div>
+        <div class="news">
+            <h3>News</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda tenetur quae ipsam fugit architecto laudantium nihil porro natus sequi, in, qui error ullam nemo. Natus numquam totam amet quae nisi.</p>
+        </div>
+        <div class="contect">
+            <h3>Contect Us:</h3>
+            <p><span>contect us:</span> 918302160041</p>
+            <p><span>Email:</span> digvijaysinghdukiya@gmail.com</p>
+            <p><span>Address:</span>Abcdef dfdffd dfddf </p>
+        </div>
+    </footer>
+    <div class="copy">
+        <p>© Copyright 2024 – Decor Interior Design by Digvijay Singh</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+        // Define an array of four colors
+        const colors = ['#0f0', '#00d2ff', '#ff0']; // Replace with your four colors
+        
+        // Randomly select one color from the array
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Set the new value for --secondary-color
+        document.documentElement.style.setProperty('--secondary-color', randomColor);
+        };
+    </script>
 </body>
 </html>

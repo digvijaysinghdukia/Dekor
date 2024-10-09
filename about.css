@@ -6,7 +6,7 @@
     background-color: var(--primary-color);
     position: sticky;
     top: 0px;
-    z-index: 10;
+    z-index: 10 ;
 }
 .add-centner, .add-card{
     width: 80%;
@@ -17,6 +17,7 @@
     justify-content: center;    
 }
 .add-card{
+    width: 100%;
     grid-template-columns: max-content auto;
     justify-items: start;
     padding: 0.5rem;
@@ -44,6 +45,22 @@
 .add-text{
     width: 100%;
 }
+@media only screen and (max-width: 600px) {
+    .add-centner{
+        width: 100%;
+    }
+    .add-card svg{
+        fill: 38PX;
+    }
+    .add-card span{
+        font-size: small;
+    }
+    .add-card p{
+        font-size: medium;
+    }
+}
+
+
 
 .top-bar{
     width: 100vw;
@@ -126,6 +143,28 @@
     font-size: large;
     color: var(--primary-color);
 }
+@media only screen and (max-width: 600px) {
+    .about{
+        grid-template-columns: 100%;
+    }
+    .about-left{
+        grid-template-columns: 100%;
+    }
+    .margin-top{
+        margin-top: 0px;
+    }
+    .about-right h3{
+        font-size: x-large;
+        width: 90%;
+    }
+    .about-right p{
+        width: 90%;
+    }
+    .about-right{
+        justify-items: center;
+    }
+}
+
 
 .our-team{
     width: 100vw;
@@ -173,4 +212,9 @@
     font-size: medium;
     opacity: 0.8;
     z-index: -1;
+}
+@media only screen and (max-width: 600px) {
+    .our-team-cards{
+        grid-template-columns: 100%;      
+    }
 }

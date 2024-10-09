@@ -1,0 +1,176 @@
+.add-bar{
+    width: 100vw;
+    height: fit-content;
+    display: grid;
+    place-items: center;
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+.add-centner, .add-card{
+    width: 80%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    justify-content: center;    
+}
+.add-card{
+    grid-template-columns: max-content auto;
+    justify-items: start;
+    padding: 0.5rem;
+    color: var(--white);
+}
+.add-card svg{
+    transition-duration: 0.5s;
+    fill: var(--white);
+    width: 3rem;
+    height: 3rem;
+    opacity: 0.8;
+}
+.add-card span{
+    font-size: smaller;
+    color: var(--secondary-color);
+    font-weight: 500;
+    width: 100%;
+    display: block;
+}
+.add-card p{
+    font-size: large;
+    color: var(--white);
+    width: 100%;
+}
+.add-text{
+    width: 100%;
+}
+
+.top-bar{
+    width: 100vw;
+    height: 200px;
+    background-image: url(./media/R2.webp);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.top-centner{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.63);
+    display: grid;
+    grid-template-columns: auto auto;
+    color: var(--white);
+    padding: 2rem;
+    align-items: end;
+    justify-content: space-between;
+}
+.top-centner h2{
+    font-size: xx-large;
+    font-weight: 500;
+}
+.top-centner p{
+    font-size: medium;
+}
+.top-centner p span{
+    color: var(--secondary-color);
+}
+
+.about{
+    width: 100vw;
+    height: fit-content;
+    background-color: rgb(19, 19, 19);
+    display: grid;
+    grid-template-columns: 50% auto;
+    place-items: center;
+}
+.about-left{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+    padding: 4rem;
+}
+.about-left img{
+    width: 90%;
+    height: 90%;
+}
+.margin-top{
+    margin-top: 2rem;
+}
+.about-right{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    color: var(--white);
+    row-gap: 2rem;
+    text-align: left;
+    justify-items: start;
+}
+.about-right h3{
+    font-size: xx-large;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.about-right p{
+    opacity: 0.9;
+    width: 80%;
+}
+.about-right a{
+    padding: 0.5rem 2rem;
+    background-color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: large;
+    color: var(--primary-color);
+}
+
+.our-team{
+    width: 100vw;
+    height: fit-content;
+    padding: 3rem;
+    display: grid;
+    place-items: center;
+    grid-template-rows: max-content auto;
+    row-gap: 3rem;
+}
+.our-team-cards{
+    width: 90%;
+    height: fit-content;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1rem;
+    column-gap: 1rem;
+}
+.team-card{
+    width: 90%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    color: var(--white);
+    row-gap: 1rem;
+}
+.card-img{
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    background-color: var(--secondary-color);
+}
+.card-img img{
+    width: 100%;
+    height: auto;
+}
+.team-card h4{
+    font-weight: 600;
+    font-size: large;
+}
+.team-card p{
+    font-weight: 500;
+    font-size: medium;
+    opacity: 0.8;
+    z-index: -1;
+}
